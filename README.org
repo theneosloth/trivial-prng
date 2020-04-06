@@ -1,6 +1,6 @@
 * Trivial-Prng 
 
-A "seeded" random number generator. No seeded random number generation is actually happening under the hood, this is simply a wrapper for easily rebinding \*random-state\*.
+A "seeded" random number generator. No seeded random number generation is actually happening under the hood, this is simply a wrapper for easily rebinding =*random-state*=.
 
 The results *are not consistent between sessions*. This could be fixed by caching the random state hashtable into a file, but I haven't needed this for my personal use cases.
 

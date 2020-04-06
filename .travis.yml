@@ -26,5 +26,5 @@ install:
 
 script:
   - cl -e '(ql:quickload :trivial-prng/tests)
-           (unless (:trivial-prng/tests/main :do-tests)
+           (unless (trivial-prng/tests/main:do-tests)
              (uiop:quit 1))'
