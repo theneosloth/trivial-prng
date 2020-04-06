@@ -1,8 +1,8 @@
 * Trivial-Prng 
 
-A "seeded" random number generator. No seeded random number generation is actually happening under the hood, this is simply a wrapper for easily rebinding =*random-state*=.
+A very thin wrapper for rebinding =*random-state*=.
 
-The results *are not consistent between sessions*. This could be fixed by caching the random state hashtable into a file, but I haven't needed this for my personal use cases.
+The results *are not consistent between sessions*. This could be fixed by caching the random state hashtable into a file, but I haven't needed this for my personal use cases. =seed= is used as a parameter name, but there is no seeded number generation happening under the hood.
 
 ** Usage
 #+begin_src lisp

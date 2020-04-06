@@ -40,3 +40,6 @@
     (with-seed :seed2
       (setf rand2 (random 10)))
     (is (equal rand1 rand2))))
+
+(test random-int-test
+  (is (equal (trivial-prng:random-int :seed3 100) (trivial-prng:random-int :seed3 100))))
