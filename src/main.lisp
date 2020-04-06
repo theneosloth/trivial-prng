@@ -11,7 +11,7 @@
 
 ;;The variable storing all the current sessions' random-states
 (defparameter *statehash*
-  (make-hash-table))
+  (make-hash-table :test #'equal))
 
 (defun get-state (key &optional (hash *statehash*))
   "Returns a copy of the random state from a HASH of random-states with KEY"

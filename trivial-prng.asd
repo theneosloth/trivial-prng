@@ -6,7 +6,7 @@
   :components ((:module "src"
                 :components
                 ((:file "main"))))
-  :description ""
+  :description "A very thin wrapper for rebinding *random-state*."
   :in-order-to ((test-op (test-op "trivial-prng/tests"))))
 
 (defsystem "trivial-prng/tests"

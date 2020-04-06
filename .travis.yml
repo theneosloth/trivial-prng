@@ -7,13 +7,11 @@ env:
     - LISP=allegro
     - LISP=sbcl
     - LISP=ccl
-    - LISP=clisp
 
 
 matrix:
   allow_failures:
     - env: LISP=allegro
-    - env: LISP=clisp
 
 # Install cl-travis
 install:
