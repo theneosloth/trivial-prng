@@ -1,0 +1,30 @@
+language: lisp
+sudo: required
+
+env:
+  matrix:
+    - LISP=abcl
+    - LISP=allegro
+    - LISP=sbcl
+    - LISP=ccl
+    - LISP=clisp
+
+
+matrix:
+  allow_failures:
+    - env: LISP=allegro
+    - env: LISP=clisp
+
+# Install cl-travis
+install:
+  - if [ -x ./install.sh ] && head -2 ./install.sh | grep '^# cl-travis' > /dev/null;
+    then
+      ./install.sh;
+    else
+      curl https://raw.githubusercontent.com/luismbo/cl-travis/master/install.sh | sh;
+    fi
+
+script:
+  - cl -e '(ql:quickload :trivial-prng/tests)
+           (unless (:trivial-prng/tests/main :do-tests)
+             (uiop:quit 1))'
